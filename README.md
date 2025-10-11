@@ -16,7 +16,7 @@ Ce travail illustre la complémentarité entre optimisation mathématique, intel
 ## 📦 Installation rapide
 ```bash
 #  Cloner le dépôt
-git clone https://github.com/tonpseudo/domoesiea.git
+git clone https://github.com/domoesiea/metaheuristics-for-np-hard-problems.git
 cd domoesiea
 
 #  Installer les dépendances
@@ -28,7 +28,7 @@ python genetic.py        # Algorithme génétique
 python Tabou.py          # Recherche tabou
 python main.py           # Lancement complet du framework
 
-# 4️⃣ (Optionnel) Comparer avec la méthode exacte (MILP)
+
 bash conversion_lancement_lp.sh
 
 
