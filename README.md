@@ -1,5 +1,5 @@
-# metaheuristics-for-np-hard-problems
-Practical optimization framework combining MILP and metaheuristics for NP-hard problems.
+# Optimisation de problèmes NP-difficiles par métaheuristiques
+Implémentation et comparaison de méthodes exactes (MILP) et métaheuristiques pour la résolution efficace de problèmes combinatoires.
 
 
 ## 🎯 Introduction
@@ -203,7 +203,7 @@ Pour le reste, les conditions de test sont les mêmes que pour l’algo généti
 
 ✅ L’hybridation accélère la convergence et atteint presque toujours la solution optimale, avec une stabilité remarquable.
 
-🧭 8️⃣ Conclusion
+## 🧭 8️⃣ Conclusion
 
 - Le MILP permet d’obtenir des solutions optimales mais reste limité aux petites instances.
 
