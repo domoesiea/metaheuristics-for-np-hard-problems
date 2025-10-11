@@ -87,4 +87,42 @@ créer de la diversité.
 Pour le glouton qui sert à réparer les solutions, nous masquons toutes les valeurs qui ne sont pas dans 
 l’ensemble de connaissances des individus de la solution passée en entrée. 
 
-## 6️⃣ Hybridation : Algorithme génétique + Tabou
+## 📊 Résultats trouvés par l’algorithme génétique
+
+Les résultats sont sur 5 essais par instance avec une taille de population de 400 et une taille de sélection 
+de 100. La sélection se fait de manière déterministe en prenant les 400 meilleurs individus. Pour plus de 
+simplicité, le croisement est à 2 points. La probabilité de croisement est de 80%. Comme dans le sujet, la 
+probabilité de mutation est de 2/N. L’entraînement se fait en cinq générations par essai. Plus tard, nous 
+avons testé avec 60 secondes d’exécution et nous trouvions souvent la solution optimale. 
+
+Nombre de tours de boucles par essai = 5 
+
+### Petites instances
+| Instances | Score min  | Score moy | Score max |
+|----------|--------------|--------|--------|
+| Instance 1 | 71  | 71.4  | 73 |
+| Instance 2 | 91 | 91 | 91 |
+| Instance 3 | 84  | 84  | 84 |
+| Instance 4 | 81  | 82.6 | 83 |
+| Instance 5 | 81  | 81 | 81 |
+| Instance 6 | 76 | 77.6  | 80 |
+| Instance 7 | 76| 78.4  | 81 |
+| Instance 8 | 83 | 84.6 | 85 |
+| Instance 9 | 75 | 75.4  | 76 |
+| Instance 10 | 87 | 90.2  | 91 |
+
+Pour les grandes instances, une seule génération a été réalisé à cause du temps d’exécution. 
+
+### Grandes instances 
+| Instances | Score min  | Score moy | Score max |
+|----------|--------------|--------|--------|
+| Instance 1 | 71  | 71.4  | 73 |
+| Instance 2 | 91 | 91 | 91 |
+| Instance 3 | 84  | 84  | 84 |
+| Instance 4 | 81  | 82.6 | 83 |
+| Instance 5 | 81  | 81 | 81 |
+| Instance 6 | 76 | 77.6  | 80 |
+| Instance 7 | 76| 78.4  | 81 |
+| Instance 8 | 83 | 84.6 | 85 |
+| Instance 9 | 75 | 75.4  | 76 |
+| Instance 10 | 87 | 90.2  | 91 |
