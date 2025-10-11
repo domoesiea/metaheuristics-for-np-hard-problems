@@ -14,7 +14,26 @@ L’objectif est double :
 Ce travail illustre la complémentarité entre optimisation mathématique, intelligence artificielle et applications industrielles, et ouvre la voie à l’optimisation pour l’apprentissage automatique, appliquée notamment à la recherche d’architectures, au réglage d’hyperparamètres et à la planification intelligente.
 
 ## 📦 Installation rapide
+```bash
+#  Cloner le dépôt
+git clone https://github.com/tonpseudo/domoesiea.git
+cd domoesiea
 
+#  Installer les dépendances
+pip install -r requirements.txt
+
+# Lancer un algorithme d'optimisation
+python glouton.py        # Heuristique gloutonne
+python genetic.py        # Algorithme génétique
+python Tabou.py          # Recherche tabou
+python main.py           # Lancement complet du framework
+
+# 4️⃣ (Optionnel) Comparer avec la méthode exacte (MILP)
+bash conversion_lancement_lp.sh
+
+
+
+```
 
 
 ## 1️ Problème étudié
