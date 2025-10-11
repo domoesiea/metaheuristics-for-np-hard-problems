@@ -116,13 +116,17 @@ Pour les grandes instances, une seule génération a été réalisé à cause du
 ### Grandes instances 
 | Instances | Score min  | Score moy | Score max |
 |----------|--------------|--------|--------|
-| Instance 1 | 71  | 71.4  | 73 |
-| Instance 2 | 91 | 91 | 91 |
-| Instance 3 | 84  | 84  | 84 |
-| Instance 4 | 81  | 82.6 | 83 |
-| Instance 5 | 81  | 81 | 81 |
-| Instance 6 | 76 | 77.6  | 80 |
-| Instance 7 | 76| 78.4  | 81 |
-| Instance 8 | 83 | 84.6 | 85 |
-| Instance 9 | 75 | 75.4  | 76 |
-| Instance 10 | 87 | 90.2  | 91 |
+| Instance 1 | 567  | 570.4   | 575  |
+| Instance 2 | 572  | 580.8 | 596 |
+| Instance 3 | 608  | 609  | 611 |
+| Instance 4 | 581  | 589.6 | 604  |
+| Instance 5 | 555  | 566 | 573 |
+| Instance 6 | 562  | 564.8  | 568  |
+| Instance 7 | 557 | 563   | 574 |
+| Instance 8 | 559 | 563 | 568 |
+| Instance 9 | 541  | 544  | 549  |
+| Instance 10 | 619  | 622.6   | 629 |
+
+Afin d’avoir plus de générations, nous avons réduit la taille de la population de 120 et la taille de sélection 
+à 60. Les résultats suivants sont sur Linux pour un temps d’exécution de 120 secondes. 
+
