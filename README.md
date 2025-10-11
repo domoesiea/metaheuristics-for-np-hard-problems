@@ -1,15 +1,16 @@
 # metaheuristics-for-np-hard-problems
 Practical optimization framework combining MILP and metaheuristics for NP-hard problems.
 
-🧩 Introduction
-
-Ce projet explore la résolution de problèmes d’optimisation combinatoire NP-difficiles à travers la comparaison et l’hybridation de méthodes exactes (Programmation Linéaire en Nombres Entiers) et de métaheuristiques (Glouton, Algorithme Génétique, Recherche Tabou).
+🎯 Introduction
+Ce projet explore la résolution de problèmes d’optimisation combinatoire NP-difficiles à travers la comparaison et l’hybridation de méthodes exactes (Programmation Linéaire en Nombres Entiers, MILP) et de métaheuristiques (Glouton, Algorithme Génétique, Recherche Tabou).
 
 L’objectif est double :
-d’une part, modéliser rigoureusement le problème de sélection optimale (clique maximale pondérée) et évaluer les performances des approches existantes ;
-d’autre part, concevoir des méthodes hybrides combinant exploration globale et recherche locale pour améliorer la qualité et la robustesse des solutions.
 
-Ce travail illustre la complémentarité entre optimisation mathématique, intelligence artificielle et applications industrielles, et ouvre la voie à l’optimisation pour l’apprentissage automatique, où ces techniques peuvent être appliquées à la recherche d’architectures, au réglage d’hyperparamètres ou à la planification intelligente.
+- Modéliser rigoureusement le problème de sélection optimale (clique maximale pondérée) et évaluer les performances des différentes approches ;
+
+- Concevoir des méthodes hybrides combinant exploration globale et recherche locale pour améliorer la qualité et la robustesse des solutions.
+
+Ce travail illustre la complémentarité entre optimisation mathématique, intelligence artificielle et applications industrielles, et ouvre la voie à l’optimisation pour l’apprentissage automatique, appliquée notamment à la recherche d’architectures, au réglage d’hyperparamètres et à la planification intelligente.
 
 ## 1️ Problème étudié
 
@@ -20,7 +21,7 @@ potentiel i a une valeur ci représentant l’intérêt d’avoir cette personne
 donnée, on cherchera à réunir le plus de personnes intéressantes possibles à condition que toutes se 
 connaissent : l’objectif sera donc dépendant du coefficient d’intérêt ci de chacun des convives invités.  
 
-## 🧮 Modélisation mathématique
+## 🧠 2️⃣ Modélisation mathématique
 
 Soit 𝑥𝑖 une variable de décision tel que : 
 
@@ -45,7 +46,7 @@ $$
 x_i + x_j \le 1, \quad \forall (i, j)  \quad tel que \quad 𝑖 ∉ 𝑉𝑗 𝑒𝑡 𝑗 ∉ 𝑉i
 $$
 
-## 📊 Résultats trouvés avec le solveur GLPK 
+## 🧮 3️⃣ Résultats — Méthode exacte (MILP, GLPK)
 
 | Instances | Score trouvé  | 
 |----------|--------------|
@@ -65,9 +66,13 @@ $$
 </p>
 
 
-## 📊 Résultats trouvés par l’algorithme glouton
-De manière générale, les tests ont été réalisés sur Windows. Pour l’algorithme glouton, nous avons codé 
-le même algorithme glouton que dans le sujet. Nous retrouvons correctement les mêmes résultats. 
+## ⚙️ 4️⃣ Résultats — Algorithme glouton
+L’algorithme glouton sélectionne successivement les convives maximisant un critère local basé sur leur intérêt et leur degré de compatibilité.
+Nous avons également implémenté deux variantes :
+
+- **Glouton randomisé :** masquage aléatoire d’une valeur sur deux pour introduire de la diversité,
+
+- **Glouton réparateur :** utilisé pour corriger les solutions non réalisables.
 
 | Instances | Score trouvé  | Gap |
 |----------|--------------|--------|
@@ -87,7 +92,7 @@ créer de la diversité.
 Pour le glouton qui sert à réparer les solutions, nous masquons toutes les valeurs qui ne sont pas dans 
 l’ensemble de connaissances des individus de la solution passée en entrée. 
 
-## 📊 Résultats trouvés par l’algorithme génétique
+## 🧬 5️⃣ Résultats — Algorithme génétique
 
 Les résultats sont sur 5 essais par instance avec une taille de population de 400 et une taille de sélection 
 de 100. La sélection se fait de manière déterministe en prenant les 400 meilleurs individus. Pour plus de 
@@ -146,7 +151,7 @@ Afin d’avoir plus de générations, nous avons réduit la taille de la populat
 Il y a une nette amélioration de la précision dû à l’augmentation du nombre de générations et il semble 
 que nos résultats sont meilleurs sur Linux que sur Windows pour les grandes instances. 
 
-## 📊 Résultats de l’algorithme à liste tabou 
+## 🔍 6️⃣ Résultats — Algorithme à liste tabou
 Nous avons codé un algorithme à liste tabou testant le voisinage en enlevant deux individus de la solution 
 puis en appliquant un glouton qui répare sur cette nouvelle solution considérant les valeurs enlevées 
 comme des valeurs interdites pour le glouton. De nouvelles solutions sont cherchés de manière récurrente 
@@ -174,7 +179,7 @@ larges mais les résultats n’étaient pas concluant tout en rajoutant inutilem
 Cependant, l’algorithme à liste tabou contribue à améliorer les solutions ce qui nous a mené à l’utiliser 
 après la réparation des enfants afin d’améliorer ceux-ci.
 
-## 📊 Résultats de l’algorithme génétique avec hybridation 
+## 🔬 7️⃣ Résultats — Algorithme génétique hybride (GA + Tabou)
 Pour avoir un temps d’exécution raisonnable, nous avons défini une profondeur maximum de récursivité 
 de 4 et nous n’enlevons plus qu’une seule valeur à la fois pour tester le voisinage. Malgré cela, nous 
 n’avons qu’un temps raisonnable que sur les petites instances.  
@@ -194,5 +199,19 @@ Pour le reste, les conditions de test sont les mêmes que pour l’algo généti
 | Instance 9 | 77   | 77   | 77   |
 | Instance 10 | 91 | 91   |91 |
 
-Nous trouvons quasiment tout le temps la solution optimale pour cet algorithme, l’algorithme à liste 
-tabou permet une convergence plus rapide vers une solution.
+
+✅ L’hybridation accélère la convergence et atteint presque toujours la solution optimale, avec une stabilité remarquable.
+
+🧭 8️⃣ Conclusion
+
+- Le MILP permet d’obtenir des solutions optimales mais reste limité aux petites instances.
+
+- Les métaheuristiques (Glouton, GA, Tabou) offrent un excellent compromis entre qualité et temps de calcul.
+
+- L’hybridation GA + Tabou donne les meilleurs résultats observés.
+
+  Ce travail met en évidence la puissance des approches métaheuristiques dans la résolution de problèmes complexes
+
+  👥 Auteurs
+
+Domo Adama
