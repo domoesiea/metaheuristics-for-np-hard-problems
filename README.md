@@ -181,3 +181,18 @@ n’avons qu’un temps raisonnable que sur les petites instances.
 Pour ces résultats, la probabilité qu’on utilise l’algorithme à liste tabou sur l’enfant est de 75%. 
 Pour le reste, les conditions de test sont les mêmes que pour l’algo génétique simple. 
 
+| Instances | Score min  | Score moy | Score max |
+|----------|--------------|--------|--------|
+| Instance 1 | 73  | 73   | 73  |
+| Instance 2 | 91  | 91 | 91 |
+| Instance 3 | 84  | 84  | 84 |
+| Instance 4 | 83   | 83  | 83   |
+| Instance 5 | 81   | 81  | 81  |
+| Instance 6 | 80   | 80   | 80   |
+| Instance 7 | 81  | 81    | 81  |
+| Instance 8 | 85  | 85  | 85  |
+| Instance 9 | 77   | 77   | 77   |
+| Instance 10 | 91 | 91   |91 |
+
+Nous trouvons quasiment tout le temps la solution optimale pour cet algorithme, l’algorithme à liste 
+tabou permet une convergence plus rapide vers une solution.
