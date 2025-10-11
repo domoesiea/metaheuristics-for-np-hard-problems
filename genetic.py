@@ -25,7 +25,7 @@ def Genetic(c,v,score,n,m,debut,temps):
     Mutation=2  
 
     if(m<70000):
-        Tabouactive=True
+        Tabouactive=False
         ProbaTabou=1
 
     else:

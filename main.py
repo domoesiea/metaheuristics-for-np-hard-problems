@@ -31,7 +31,7 @@ else:
     Solution=Genetic(c,v,score,n,m,start,float(sys.argv[1]))
     
     with open(sys.argv[3], 'w') as file:
-        for i in range(n):
+        for i in range(m):
             if(i not in Solution):
                 file.write("0")
             else:
