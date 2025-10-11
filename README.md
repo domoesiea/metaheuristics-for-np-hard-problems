@@ -1,7 +1,8 @@
 # metaheuristics-for-np-hard-problems
 Practical optimization framework combining MILP and metaheuristics for NP-hard problems.
 
-🎯 Introduction
+
+## 🎯 Introduction
 Ce projet explore la résolution de problèmes d’optimisation combinatoire NP-difficiles à travers la comparaison et l’hybridation de méthodes exactes (Programmation Linéaire en Nombres Entiers, MILP) et de métaheuristiques (Glouton, Algorithme Génétique, Recherche Tabou).
 
 L’objectif est double :
@@ -74,7 +75,7 @@ Nous avons également implémenté deux variantes :
 
 - **Glouton réparateur :** utilisé pour corriger les solutions non réalisables.
 
-| Instances | Score trouvé  | Gap |
+| Instances | Score trouvé  | Écart relatif (Gap)  |
 |----------|--------------|--------|
 | Instance 1 | 69 | 0.5 |
 | Instance 2 | 90 | 0.01 |
@@ -212,6 +213,9 @@ Pour le reste, les conditions de test sont les mêmes que pour l’algo généti
 
   Ce travail met en évidence la puissance des approches métaheuristiques dans la résolution de problèmes complexes
 
-  👥 Auteurs
+## 📁 8️⃣ Arborescence du projet
+
+ 
+## 👥 Auteurs
 
 Domo Adama
