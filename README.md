@@ -130,3 +130,54 @@ Pour les grandes instances, une seule génération a été réalisé à cause du
 Afin d’avoir plus de générations, nous avons réduit la taille de la population de 120 et la taille de sélection 
 à 60. Les résultats suivants sont sur Linux pour un temps d’exécution de 120 secondes. 
 
+| Grandes instances | Score trouvé |
+|---------|------------|
+|Instance 1 | 604 |
+|Instance 2 | 620 |
+|Instance 3 | 643 |
+|Instance 4 | 620 |
+|Instance 5 | 593 |
+|Instance 6 | 598 |
+|Instance 7 | 590 |
+|Instance 8 | 595 |
+|Instance 9 | 577 |
+|Instance 10 | 658 | 
+
+Il y a une nette amélioration de la précision dû à l’augmentation du nombre de générations et il semble 
+que nos résultats sont meilleurs sur Linux que sur Windows pour les grandes instances. 
+
+## 📊 Résultats de l’algorithme à liste tabou 
+Nous avons codé un algorithme à liste tabou testant le voisinage en enlevant deux individus de la solution 
+puis en appliquant un glouton qui répare sur cette nouvelle solution considérant les valeurs enlevées 
+comme des valeurs interdites pour le glouton. De nouvelles solutions sont cherchés de manière récurrente 
+jusqu’à ce qu’il n’y ait plus de voisin qui améliore le score. Les résultats du tableau ci-dessous sont basés 
+d’une initialisation de l’algorithme à partir de la solution trouvée par notre algorithme glouton. 
+
+| Petites instances | Score trouvé |
+|---------|------------|
+|Instance 1 | 70 |
+|Instance 2 | 90 |
+|Instance 3 | 74 |
+|Instance 4 | 68 |
+|Instance 5 | 80 |
+|Instance 6 | 73 |
+|Instance 7 | 73 |
+|Instance 8 | 73 |
+|Instance 9 | 71 |
+|Instance 10 | 88 |
+
+La récurrence prenant beaucoup de temps, nous avons par la suite limiter la recherche de voisinage en 
+enlevant seulement un seul voisin et en limitant la récurrence à une profondeur de 4. Les résultats 
+semblent meilleurs que l’algorithme glouton tout en étant moins bon que l’algorithme génétique. Nous 
+avons aussi testé un fonctionnement itératif de cet algorithme pour qu’il fonctionne sur des instances 
+larges mais les résultats n’étaient pas concluant tout en rajoutant inutilement du temps de calcul. 
+Cependant, l’algorithme à liste tabou contribue à améliorer les solutions ce qui nous a mené à l’utiliser 
+après la réparation des enfants afin d’améliorer ceux-ci.
+
+## 📊 Résultats de l’algorithme génétique avec hybridation 
+Pour avoir un temps d’exécution raisonnable, nous avons défini une profondeur maximum de récursivité 
+de 4 et nous n’enlevons plus qu’une seule valeur à la fois pour tester le voisinage. Malgré cela, nous 
+n’avons qu’un temps raisonnable que sur les petites instances.  
+Pour ces résultats, la probabilité qu’on utilise l’algorithme à liste tabou sur l’enfant est de 75%. 
+Pour le reste, les conditions de test sont les mêmes que pour l’algo génétique simple. 
+
