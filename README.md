@@ -13,6 +13,10 @@ L’objectif est double :
 
 Ce travail illustre la complémentarité entre optimisation mathématique, intelligence artificielle et applications industrielles, et ouvre la voie à l’optimisation pour l’apprentissage automatique, appliquée notamment à la recherche d’architectures, au réglage d’hyperparamètres et à la planification intelligente.
 
+## 📦 Installation rapide
+
+
+
 ## 1️ Problème étudié
 
 Notre but est de résoudre un problème d’organisation de soirée. On dispose d’un ensemble de N convives 
@@ -21,6 +25,8 @@ Vi ⊆ {1, .., N }. Pour tout couple (i, j) ∈ {1, .., N }², si i et j se conn
 potentiel i a une valeur ci représentant l’intérêt d’avoir cette personne à notre soirée. Pour une instance 
 donnée, on cherchera à réunir le plus de personnes intéressantes possibles à condition que toutes se 
 connaissent : l’objectif sera donc dépendant du coefficient d’intérêt ci de chacun des convives invités.  
+
+
 
 ## 🧠 2️⃣ Modélisation mathématique
 
