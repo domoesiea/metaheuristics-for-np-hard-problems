@@ -19,19 +19,28 @@ Ce travail illustre la complémentarité entre optimisation mathématique, intel
 git clone https://github.com/domoesiea/metaheuristics-for-np-hard-problems.git
 cd domoesiea
 
-#  Installer les dépendances
-pip install -r requirements.txt
+# Description rapide des fichiers
+| Fichier                        | Description                                                               |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| **main.py**                    | Programme principal – orchestre la lecture, l’algorithme et la sauvegarde |
+| **glouton.py**                 | Implémentation de l’algorithme glouton et ses variantes                   |
+| **genetic.py**                 | Implémentation de l’algorithme génétique                                  |
+| **Tabou.py**                   | Recherche tabou pour améliorer les solutions                              |
+| **conversion.py**              | Convertit un fichier texte en modèle LP pour le solveur GLPK              |
+| **conversion_lancement_lp.sh** | Automatisation : conversion + résolution LP                               |
+| **Rapport.pdf**                | Rapport complet du projet                                                 |
+| `data/`                         | Instances et fichiers de résultats                                        |
 
-# Lancer un algorithme d'optimisation
-python glouton.py        # Heuristique gloutonne
-python genetic.py        # Algorithme génétique
-python Tabou.py          # Recherche tabou
-python main.py           # Lancement complet du framework
 
+# Exécuter la méthode exacte (MILP)
+bash conversion_lancement_lp.sh data/instance1.txt data/instance1.lp
 
-bash conversion_lancement_lp.sh
-
-
+# Lancer le programme principal
+python main.py <temps_limite> <fichier_entree> <fichier_sortie>
+python main.py 60 data/instance1.txt resultats/solution1.txt
+python glouton.py           # Heuristique gloutonne
+python genetic.py           # Algorithme génétique
+python Tabou.py             # Recherche tabou
 
 ```
 
