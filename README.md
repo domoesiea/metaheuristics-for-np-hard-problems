@@ -2,7 +2,7 @@
 Implémentation et comparaison de méthodes exactes (MILP) et métaheuristiques pour la résolution efficace de problèmes combinatoires.
 
 
-## 🎯 Introduction
+## Introduction
 Ce projet explore la résolution de problèmes d’optimisation combinatoire NP-difficiles à travers la comparaison et l’hybridation de méthodes exactes (Programmation Linéaire en Nombres Entiers, MILP) et de métaheuristiques (Glouton, Algorithme Génétique, Recherche Tabou).
 
 L’objectif est double :
@@ -13,7 +13,7 @@ L’objectif est double :
 
 Ce travail illustre la complémentarité entre optimisation mathématique, intelligence artificielle et applications industrielles, et ouvre la voie à l’optimisation pour l’apprentissage automatique, appliquée notamment à la recherche d’architectures, au réglage d’hyperparamètres et à la planification intelligente.
 
-## 📦 Installation rapide
+##  Installation rapide
 ```bash
 #  Cloner le dépôt
 git clone https://github.com/domoesiea/metaheuristics-for-np-hard-problems.git
@@ -56,7 +56,7 @@ connaissent : l’objectif sera donc dépendant du coefficient d’intérêt ci 
 
 
 
-## 🧠 2️⃣ Modélisation mathématique
+## Modélisation mathématique
 
 Soit 𝑥𝑖 une variable de décision tel que : 
 
@@ -81,7 +81,7 @@ $$
 x_i + x_j \le 1, \quad \forall (i, j)  \quad tel que \quad 𝑖 ∉ 𝑉𝑗 𝑒𝑡 𝑗 ∉ 𝑉i
 $$
 
-## 🧮 3️⃣ Résultats — Méthode exacte (MILP, GLPK)
+## Résultats — Méthode exacte (MILP, GLPK)
 
 | Instances | Score trouvé  | 
 |----------|--------------|
@@ -101,7 +101,7 @@ $$
 </p>
 
 
-## ⚙️ 4️⃣ Résultats — Algorithme glouton
+## Résultats — Algorithme glouton
 L’algorithme glouton sélectionne successivement les convives maximisant un critère local basé sur leur intérêt et leur degré de compatibilité.
 Nous avons également implémenté deux variantes :
 
@@ -127,7 +127,7 @@ créer de la diversité.
 Pour le glouton qui sert à réparer les solutions, nous masquons toutes les valeurs qui ne sont pas dans 
 l’ensemble de connaissances des individus de la solution passée en entrée. 
 
-## 🧬 5️⃣ Résultats — Algorithme génétique
+## Résultats — Algorithme génétique
 
 Les résultats sont sur 5 essais par instance avec une taille de population de 400 et une taille de sélection 
 de 100. La sélection se fait de manière déterministe en prenant les 400 meilleurs individus. Pour plus de 
@@ -186,7 +186,7 @@ Afin d’avoir plus de générations, nous avons réduit la taille de la populat
 Il y a une nette amélioration de la précision dû à l’augmentation du nombre de générations et il semble 
 que nos résultats sont meilleurs sur Linux que sur Windows pour les grandes instances. 
 
-## 🔍 6️⃣ Résultats — Algorithme à liste tabou
+## Résultats — Algorithme à liste tabou
 Nous avons codé un algorithme à liste tabou testant le voisinage en enlevant deux individus de la solution 
 puis en appliquant un glouton qui répare sur cette nouvelle solution considérant les valeurs enlevées 
 comme des valeurs interdites pour le glouton. De nouvelles solutions sont cherchés de manière récurrente 
@@ -214,7 +214,7 @@ larges mais les résultats n’étaient pas concluant tout en rajoutant inutilem
 Cependant, l’algorithme à liste tabou contribue à améliorer les solutions ce qui nous a mené à l’utiliser 
 après la réparation des enfants afin d’améliorer ceux-ci.
 
-## 🔬 7️⃣ Résultats — Algorithme génétique hybride (GA + Tabou)
+## Résultats — Algorithme génétique hybride (GA + Tabou)
 Pour avoir un temps d’exécution raisonnable, nous avons défini une profondeur maximum de récursivité 
 de 4 et nous n’enlevons plus qu’une seule valeur à la fois pour tester le voisinage. Malgré cela, nous 
 n’avons qu’un temps raisonnable que sur les petites instances.  
@@ -235,9 +235,9 @@ Pour le reste, les conditions de test sont les mêmes que pour l’algo généti
 | Instance 10 | 91 | 91   |91 |
 
 
-✅ L’hybridation accélère la convergence et atteint presque toujours la solution optimale, avec une stabilité remarquable.
+ L’hybridation accélère la convergence et atteint presque toujours la solution optimale, avec une stabilité remarquable.
 
-## 🧭 8️⃣ Conclusion
+##  Conclusion
 
 - Le MILP permet d’obtenir des solutions optimales mais reste limité aux petites instances.
 
@@ -247,9 +247,9 @@ Pour le reste, les conditions de test sont les mêmes que pour l’algo généti
 
   Ce travail met en évidence la puissance des approches métaheuristiques dans la résolution de problèmes complexes
 
-## 📁 8️⃣ Arborescence du projet
+## Arborescence du projet
 
  
-## 👥 Auteurs
+##  Auteurs
 
 Domo Adama
